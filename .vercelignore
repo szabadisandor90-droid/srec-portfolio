@@ -1,0 +1,12 @@
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.psd
+*.PSD
+.DS_Store
+node_modules/
+social-media-planner/
+.claude/
+light.html
+style-light.css
