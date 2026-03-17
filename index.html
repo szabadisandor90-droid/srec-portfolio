@@ -45,10 +45,14 @@
   <!-- ── HERO ── -->
   <section id="hero">
     <div class="hero-bg">
-      <video class="hero-video" autoplay muted loop playsinline
-        poster="https://images.unsplash.com/photo-1536240478700-b869ad10a2ab?w=1600&q=80">
-        <source src="/api/proxy?v=SHOWREEL_2023.mp4" type="video/mp4" />
-      </video>
+      <iframe
+        id="hero-iframe"
+        class="hero-video"
+        src="https://player.vimeo.com/video/1174421089?h=5fcaa66ced&background=1&autoplay=1&loop=1&muted=1&quality=auto&title=0&byline=0&portrait=0"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        title="Showreel"
+      ></iframe>
       <div class="hero-noise"></div>
       <div class="hero-overlay"></div>
     </div>
@@ -60,7 +64,7 @@
     </div>
 
     <div class="hero-meta">
-<a href="#work" class="hero-btn magnetic">
+      <a href="#work" class="hero-btn magnetic">
         <span>View Work</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -118,7 +122,7 @@
 
     <div class="work-grid" id="work-grid">
 
-      <article class="work-card" data-category="Social Media" data-video="/api/proxy?v=Karin_Samurai.mp4">
+      <article class="work-card" data-category="Social Media" data-video="https://player.vimeo.com/video/1174420171?h=52fc77f49e&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">01</div>
         <div class="work-media">
           <img src="karin.png" alt="Karin Samurai" loading="lazy" />
@@ -134,7 +138,7 @@
         </div>
       </article>
 
-      <article class="work-card" data-category="Social Media" data-video="/api/proxy?v=TB_Unterboden.mp4">
+      <article class="work-card" data-category="Social Media" data-video="https://player.vimeo.com/video/1174421209?h=41b015bb86&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">02</div>
         <div class="work-media">
           <img src="Florin.png" alt="TB Unterboden" loading="lazy" />
@@ -150,7 +154,7 @@
         </div>
       </article>
 
-      <article class="work-card" data-category="Social Media" data-video="/api/proxy?v=Christoph_Clone.mp4">
+      <article class="work-card" data-category="Social Media" data-video="https://player.vimeo.com/video/1174419966?h=8069201fa4&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">03</div>
         <div class="work-media">
           <img src="christoph.png" alt="Christoph Clone" loading="lazy" />
@@ -166,7 +170,7 @@
         </div>
       </article>
 
-      <article class="work-card card-landscape" data-category="Automotive" data-video="/api/proxy?v=RS3.mp4">
+      <article class="work-card card-landscape" data-category="Automotive" data-video="https://player.vimeo.com/video/1174420434?h=91f1782538&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">04</div>
         <div class="work-media">
           <img src="rs3 kep.png" alt="Tuningbase" loading="lazy" />
@@ -182,7 +186,7 @@
         </div>
       </article>
 
-      <article class="work-card card-landscape" data-category="Interview" data-video="/api/proxy?v=Interview.mp4">
+      <article class="work-card card-landscape" data-category="Interview" data-video="https://player.vimeo.com/video/1174418657?h=5d1ca1f866&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">05</div>
         <div class="work-media">
           <img src="toni kep.png" alt="Interview" loading="lazy" />
@@ -198,7 +202,7 @@
         </div>
       </article>
 
-      <article class="work-card" data-category="Automotive" data-video="/api/proxy?v=R8_FINAL.mp4">
+      <article class="work-card" data-category="Automotive" data-video="https://player.vimeo.com/video/1174420252?h=dd36ee0d9b&autoplay=1&title=0&byline=0&portrait=0&color=dc2626">
         <div class="work-num">06</div>
         <div class="work-media">
           <img src="r8.png" alt="JP's R8" loading="lazy" />
@@ -268,6 +272,7 @@
     </div>
   </footer>
 
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
