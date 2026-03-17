@@ -1,0 +1,20 @@
+# Videos (too large for GitHub - host on Vimeo/Cloudinary)
+*.mp4
+*.MP4
+*.mov
+*.MOV
+
+# Design files
+*.psd
+*.PSD
+
+# System
+.DS_Store
+Thumbs.db
+
+# Other
+node_modules/
+.env
+.env.*
+secrets/
+social-media-planner/

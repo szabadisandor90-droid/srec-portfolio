@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SREC — Videographer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── LOADER ── -->
+  <div id="loader">
+    <div class="loader-panel loader-l"></div>
+    <div class="loader-panel loader-r"></div>
+    <div class="loader-count" id="loader-count">0</div>
+  </div>
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div id="progress-bar"></div>
+
+  <!-- ── CURSOR ── -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.png" alt="SREC" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline
+        poster="https://images.unsplash.com/photo-1536240478700-b869ad10a2ab?w=1600&q=80">
+        <source src="SHOWREEL_2023.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-noise"></div>
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-text">
+      <div class="line-wrap"><span class="h-line">Every</span></div>
+      <div class="line-wrap"><span class="h-line outline">Frame</span></div>
+      <div class="line-wrap"><span class="h-line">Matters.</span></div>
+    </div>
+
+    <div class="hero-meta">
+<a href="#work" class="hero-btn magnetic">
+        <span>View Work</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="hero-volume" id="hero-volume">
+      <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5" aria-label="Volume" />
+    </div>
+
+    <button class="hero-sound" id="hero-sound" aria-label="Unmute video">
+      <!-- muted icon -->
+      <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <!-- unmuted icon -->
+      <svg class="icon-sound" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none">
+        <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      </svg>
+      <span class="sound-label">Sound</span>
+    </button>
+
+    <div class="hero-scroll-ind">
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ── DIVIDER ── -->
+  <div class="section-divider" id="section-divider" aria-hidden="true">
+    <div class="divider-line divider-l"></div>
+    <div class="divider-center">
+      <span class="divider-diamond"></span>
+    </div>
+    <div class="divider-line divider-r"></div>
+  </div>
+
+  <!-- ── WORK ── -->
+  <section id="work">
+    <div class="work-header">
+      <div class="work-header-left">
+        <span class="section-num">01 /</span>
+        <h2 class="section-title" id="work-title">Portfolio</h2>
+      </div>
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Social Media">Social</button>
+        <button class="filter-btn" data-filter="Automotive">Auto</button>
+        <button class="filter-btn" data-filter="Interview">Interview</button>
+      </div>
+    </div>
+
+    <div class="work-grid" id="work-grid">
+
+      <article class="work-card" data-category="Social Media" data-video="Karin Samurai_music_02.mp4">
+        <div class="work-num">01</div>
+        <div class="work-media">
+          <img src="karin.png" alt="Karin Samurai" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Social Media · 2024</span>
+          <h3>Aumaerk</h3>
+        </div>
+      </article>
+
+      <article class="work-card" data-category="Social Media" data-video="TB Unterbodenversiegelung_AD_01_9x16.mp4">
+        <div class="work-num">02</div>
+        <div class="work-media">
+          <img src="Florin.png" alt="TB Unterboden" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Social Media · 2024</span>
+          <h3>TB Unterbodenversiegelung</h3>
+        </div>
+      </article>
+
+      <article class="work-card" data-category="Social Media" data-video="Christoph_Clone_Long_mit music_9x16.mp4">
+        <div class="work-num">03</div>
+        <div class="work-media">
+          <img src="christoph.png" alt="Christoph Clone" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Social Media · 2024</span>
+          <h3>Digitalförderung</h3>
+        </div>
+      </article>
+
+      <article class="work-card card-landscape" data-category="Automotive" data-video="RS3.mp4">
+        <div class="work-num">04</div>
+        <div class="work-media">
+          <img src="rs3 kep.png" alt="Tuningbase" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Automotive · 2024</span>
+          <h3>Tuningbase</h3>
+        </div>
+      </article>
+
+      <article class="work-card card-landscape" data-category="Interview" data-video="Antonio Akkermann_Testimonial_01.mp4">
+        <div class="work-num">05</div>
+        <div class="work-media">
+          <img src="toni kep.png" alt="Interview" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Interview · 2024</span>
+          <h3>Interview</h3>
+        </div>
+      </article>
+
+      <article class="work-card" data-category="Automotive" data-video="R8_FINAL.mp4">
+        <div class="work-num">06</div>
+        <div class="work-media">
+          <img src="r8.png" alt="JP's R8" loading="lazy" />
+          <div class="work-hover">
+            <button class="play-btn" aria-label="Play">
+              <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="work-info">
+          <span class="work-tag">Automotive · 2023</span>
+          <h3>JP's R8</h3>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── STATS ── -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-num"><span class="count" data-target="200">0</span><sup>+</sup></div>
+      <p class="stat-label">Projects</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="count" data-target="9">0</span></div>
+      <p class="stat-label">Years Active</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num"><span class="count" data-target="4">0</span></div>
+      <p class="stat-label">Countries</p>
+    </div>
+  </div>
+
+  <!-- ── LIGHTBOX ── -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="lightbox-inner"></div>
+  </div>
+  <div id="lightbox-backdrop" class="lightbox-backdrop"></div>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <p class="footer-tag">Let's work together</p>
+        <a href="mailto:szabadi.sandor90@gmail.com" class="footer-email magnetic">szabadi.sandor90@gmail.com</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 SREC</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
