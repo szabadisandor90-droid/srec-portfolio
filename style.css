@@ -56,10 +56,42 @@ ul  { list-style: none; }
   font-size: clamp(4rem, 14vw, 12rem);
   color: var(--lime);
   letter-spacing: .02em;
-  transition: opacity .3s .8s;
+  transition: opacity .35s ease, transform .35s ease;
   pointer-events: none;
 }
+.loader-count.morph-out {
+  opacity: 0;
+  transform: scale(.55);
+}
 #loader.done .loader-count { opacity: 0; }
+
+/* loader logo reveal */
+.loader-logo-reveal {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transform: scale(.5);
+  transition: opacity .4s ease, transform .4s cubic-bezier(.22,.61,.36,1);
+  pointer-events: none;
+}
+.loader-logo-reveal img {
+  width: clamp(120px, 18vw, 220px);
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 8px rgba(220,38,38,.8))
+    drop-shadow(0 0 20px rgba(220,38,38,.5))
+    drop-shadow(0 0 40px rgba(220,38,38,.3));
+}
+.loader-logo-reveal.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+.loader-logo-reveal.fade-out {
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity .5s ease, transform .5s ease;
+}
 
 /* ── SCROLL PROGRESS ── */
 #progress-bar {
@@ -617,6 +649,41 @@ footer {
   transition: width .45s var(--ease);
 }
 .footer-email:hover::after { width: 100%; }
+
+.footer-contacts {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  font-family: var(--font-h);
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing: .06em;
+  color: var(--fg);
+  position: relative;
+  transition: color .3s var(--ease), transform .3s var(--ease);
+}
+.footer-whatsapp .wa-icon {
+  width: clamp(1.2rem, 2vw, 1.8rem);
+  height: clamp(1.2rem, 2vw, 1.8rem);
+  flex-shrink: 0;
+  color: #25D366;
+  transition: filter .3s;
+}
+.footer-whatsapp::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0;
+  width: 0; height: 2px; background: #25D366;
+  transition: width .45s var(--ease);
+}
+.footer-whatsapp:hover::after { width: 100%; }
+.footer-whatsapp:hover { color: #25D366; }
+.footer-whatsapp:hover .wa-icon { filter: drop-shadow(0 0 6px rgba(37,211,102,.6)); }
 
 .footer-bottom {
   display: flex; align-items: center;

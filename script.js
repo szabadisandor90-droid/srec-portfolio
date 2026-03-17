@@ -3,16 +3,49 @@
 ───────────────────────────────────────── */
 const loader      = document.getElementById('loader');
 const loaderCount = document.getElementById('loader-count');
+const loaderLogo  = document.getElementById('loader-logo-reveal');
 let countVal = 0;
+let countDone = false;
+
+function finishLoader() {
+  if (countDone) return;
+  countDone = true;
+
+  // 1) count snaps to 100, shrinks out
+  if (loaderCount) loaderCount.textContent = '100';
+  setTimeout(() => {
+    if (loaderCount) loaderCount.classList.add('morph-out');
+  }, 80);
+
+  // 2) logo scales in
+  setTimeout(() => {
+    if (loaderLogo) loaderLogo.classList.add('visible');
+  }, 280);
+
+  // 3) logo fades out, then panels split
+  setTimeout(() => {
+    if (loaderLogo) loaderLogo.classList.add('fade-out');
+  }, 1000);
+
+  setTimeout(() => {
+    loader?.classList.add('done');
+  }, 1350);
+}
 
 const countInterval = setInterval(() => {
   countVal += Math.floor(Math.random() * 11) + 4;
-  if (countVal >= 100) { countVal = 100; clearInterval(countInterval); }
+  if (countVal >= 100) {
+    countVal = 100;
+    clearInterval(countInterval);
+    finishLoader();
+    return;
+  }
   if (loaderCount) loaderCount.textContent = countVal;
 }, 38);
 
 window.addEventListener('load', () => {
-  setTimeout(() => loader?.classList.add('done'), 320);
+  // Safety fallback if interval didn't reach 100 yet
+  setTimeout(() => { if (!countDone) finishLoader(); }, 3500);
 });
 
 /* ─────────────────────────────────────────
